@@ -1,2 +1,2 @@
 # exercisesRepository
-Repository that i use for to save my exercises.
+This Repository was created for save my projects/exercises during my courses and all here is free to use or copy.
