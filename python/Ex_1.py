@@ -23,58 +23,118 @@ class Exercicio:
             return True
         except:
             return False
+    #Função que imprime uma linha tracejada na tela e caso tenha um texto
+    #imprime a linha com o texto centralizado:
+    def daLinha(self,txt = '',tamanhoDoTrem = 0):
+        texto = '' # Variavel que guarda o texto completo que sera impresso
+        if tamanhoDoTrem == 0:
+            tamanhoDoTrem = 70
+        if len(txt) == 0:
+            for i in range(tamanhoDoTrem):
+                texto = texto + '-'
+        else:
+            j = (tamanhoDoTrem - len(txt)) // 2
+            for i in range(j):
+                texto = texto + '-'
+            texto = texto + txt
+            for i in range (j):
+                texto = texto + '-'
+            if len(texto) < tamanhoDoTrem:
+                texto = texto + '-'
+        print(texto,'\n')
+
     ######################## Fim de Funções auxiliares: ########################
 
     ######################### Inicio dos Exercicios ! ##########################
     # Exercicio 1:
     #Faça um Programa que mostre a mensagem "Alo mundo" na tela.
     def olaMundo(self):
-        print('------------------------Exercicio 1:-----------------------')
+        self.limpaEsseTrem()
+        self.daLinha('Exercicio 1:')
         print('Faça um Programa que mostre a mensagem "Alo mundo" na tela.')
         print('Ola Mundo!!!!')
-        print('-----------------------------------------------------------')
-
+        self.daLinha()
+        self.pera(3)
     # Exercicio 2:
     #Faça um Programa que peça um número e então mostre a mensagem O número
     #informado foi [número].
     def exibeNumero(self):
-        print('------------------------Exercicio 2:-----------------------')
+        self.limpaEsseTrem()
+        self.daLinha('Exercicio 2:')
         print('Faça um Programa que peça um número e então mostre a mensagem Numero informado foi X:')
-        exercicio.pera(4)
-        exercicio.limpaEsseTrem()
-        print('-----------------------------------------------------------')
+        self.daLinha()
         valor = input('Digite um Numero valido:')
-        if exercicio.eNumIsso(valor):
+        if self.eNumIsso(valor):
             print(f'O valor digitado {valor} e um valor NUMERICO')
         else:
             print(f"O valor digitado {valor} não é um numerico!!!!")
+        self.pera(5)
+        self.daLinha()
+    # Exercicio 3
+    # Faça um Programa que peça doisou mais números e imprima a soma.
+    def somaNumeros(self):
+        repetir = False
+        valores = []
+        texto = ''
+        while(repetir == False):
+            self.limpaEsseTrem()
+            self.daLinha('Exercicio 3:')
+            print('Faça um Programa que  peça dois ou mais  números e imprima a soma.')
+            print('Lembrando que caso seja  digitado letras somente sera  adicionado ')
+            print('a listagem mas  o valor  não será somado! E caso não seja digitado')
+            print('valor o programa efetuara a somatoria SOMENTE dos valores numericos')
+            print('e voltara ao menu principal.')
+            self.daLinha()
+            i = 0
+            print('Numeros: ')
+            print(valores)
+            self.daLinha()
 
-        exercicio.pera(5)
-        print('-----------------------------------------------------------')
-    #################### Fim dos Exercicios! ########################
+            valor = input('Digite o valor que deseja adicionar a soma:')
+            if (self.eNumIsso(valor)):
+                valores.append(valor)
+            elif len(valor) == 0:
+                repetir = True
+
+                self.daLinha('Somatoria:')
+                total = 0
+                for j in valores:
+                    total = total + int(j)
+                print('Os valores foram:')
+                print(valores)
+                print(f'Valor total: {total}')
+
+            else:
+                print('Não foi digitado um valor valido!!')
+            self.pera(3)
+
+
+
+    ########################## Fim dos Exercicios! #############################
 
 #################### Começo da parte principal do programa ####################
 exercicio = Exercicio() # Cria a classe para ser usada
 i = True
 while(i):
     exercicio.limpaEsseTrem()
-    print('-----------------------------------------------------------')
+    exercicio.daLinha()
     print('Lista de exercicios já feitos:')
     print('1 : OlaMundo')
     print('2 : Exibe Numero')
+    print('3 : Soma Numeros')
     print('0 : Finaliza o Programa')
-    print('-----------------------------------------------------------')
+    exercicio.daLinha()
     ex = input('Escolha qual exercicio você quer executar:')
 
     if ex == '0':
-        print('Exercicios retirados de: https://wiki.python.org.br/ListaDeExercicios')
+        print('Exercicios retirados do site: https://wiki.python.org.br/ListaDeExercicios')
         print('Finalizando programa...')
         exercicio.pera(3)
         i = False
     else:
         if ex == '1':
             exercicio.olaMundo()
-            #time.sleep(5)
-            exercicio.pera(5)
         elif ex == '2':
             exercicio.exibeNumero()
+        elif ex == '3':
+            exercicio.somaNumeros()
