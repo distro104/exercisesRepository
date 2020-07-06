@@ -108,8 +108,34 @@ class Exercicio:
                 print('Não foi digitado um valor valido!!')
             self.pera(3)
 
+    # Exercicio 4
+    # Faça um Programa que peça as 4 notas bimestrais e mostre a média.
+    def calculaNota(self):
+        repetir = False
+        notas = []
+        media = 0
+        while repetir == False:
+            self.limpaEsseTrem()
+            self.daLinha('Exercicio 3')
+            print('Faça um programa que peça as 4 notas bimestrais e mostre a media.')
+            self.daLinha()
+            print('Valores digitados:')
+            print(notas)
 
-
+            if len(notas) < 4:
+                valor = input('Digite um valor valido: ')
+                if self.eNumIsso(valor) == True:
+                    notas.append(valor)
+                else:
+                    print('O valor digitado não é um valor valido! Digite um valor valido.')
+            else:
+                for i in notas:
+                    media = media + int(i)
+                    media = media / len(notas)
+                print('O média das notas é:')
+                print(media)
+                repetir = True
+            self.pera(3)
     ########################## Fim dos Exercicios! #############################
 
 #################### Começo da parte principal do programa ####################
@@ -122,6 +148,7 @@ while(i):
     print('1 : OlaMundo')
     print('2 : Exibe Numero')
     print('3 : Soma Numeros')
+    print('4 : Calcula Media das notas')
     print('0 : Finaliza o Programa')
     exercicio.daLinha()
     ex = input('Escolha qual exercicio você quer executar:')
@@ -138,3 +165,5 @@ while(i):
             exercicio.exibeNumero()
         elif ex == '3':
             exercicio.somaNumeros()
+        elif ex == '4':
+            exercicio.calculaNota()
