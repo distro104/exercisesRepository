@@ -73,10 +73,10 @@ class Exercicio:
     # Exercicio 3
     # Faça um Programa que peça doisou mais números e imprima a soma.
     def somaNumeros(self):
-        repetir = False
+        repetir = True
         valores = []
         texto = ''
-        while(repetir == False):
+        while(repetir):
             self.limpaEsseTrem()
             self.daLinha('Exercicio 3:')
             print('Faça um Programa que  peça dois ou mais  números e imprima a soma.')
@@ -94,7 +94,7 @@ class Exercicio:
             if (self.eNumIsso(valor)):
                 valores.append(valor)
             elif len(valor) == 0:
-                repetir = True
+                repetir = False
 
                 self.daLinha('Somatoria:')
                 total = 0
@@ -111,10 +111,10 @@ class Exercicio:
     # Exercicio 4
     # Faça um Programa que peça as 4 notas bimestrais e mostre a média.
     def calculaNota(self):
-        repetir = False
+        repetir = True
         notas = []
         media = 0
-        while repetir == False:
+        while(repetir):
             self.limpaEsseTrem()
             self.daLinha('Exercicio 3')
             print('Faça um programa que peça as 4 notas bimestrais e mostre a media.')
@@ -124,7 +124,7 @@ class Exercicio:
 
             if len(notas) < 4:
                 valor = input('Digite um valor valido: ')
-                if self.eNumIsso(valor) == True:
+                if self.eNumIsso(valor) == False:
                     notas.append(valor)
                 else:
                     print('O valor digitado não é um valor valido! Digite um valor valido.')
@@ -134,8 +134,30 @@ class Exercicio:
                     media = media / len(notas)
                 print('O média das notas é:')
                 print(media)
-                repetir = True
+                repetir = False
             self.pera(3)
+
+    # Exercicio 5
+    # Faça um Programa que converta metros para centímetros.
+    def converter_medida(self):
+        repetir = True
+        while(repetir):
+            self.limpaEsseTrem()
+            self.daLinha()
+            self.daLinha('Exercicio 5')
+            self.daLinha()
+            print('Faça um Programa que converta metros para centímetros.')
+            self.daLinha()
+
+            valor_m = input('Digite o valor em Metros para a converção:')
+            try:
+                valor_c = round(float(valor_m) * 100)
+                print(f'O valor de {valor_m} metos convertido é {valor_c} centimetros')
+                repetir = False
+                self.pera(2)
+            except:
+                print('O valor digitado não é um valor valido para converção. Por favor digite um valor numerico valido!')
+                self.pera(2)
     ########################## Fim dos Exercicios! #############################
 
 #################### Começo da parte principal do programa ####################
@@ -149,6 +171,7 @@ while(i):
     print('2 : Exibe Numero')
     print('3 : Soma Numeros')
     print('4 : Calcula Media das notas')
+    print('5 : Converte metros para centimetros')
     print('0 : Finaliza o Programa')
     exercicio.daLinha()
     ex = input('Escolha qual exercicio você quer executar:')
@@ -167,3 +190,5 @@ while(i):
             exercicio.somaNumeros()
         elif ex == '4':
             exercicio.calculaNota()
+        elif ex == '5':
+            exercicio.converter_medida()
