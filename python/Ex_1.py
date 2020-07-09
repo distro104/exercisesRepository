@@ -10,14 +10,14 @@ import time
 class Exercicio:
     ########################### Funções auxiliares: ############################
     #Função para limpar a tela
-    def limpaEsseTrem(self):
+    def limpa_esse_trem(self):
         os.system('cls||clear')
     #Função que faz o sistema aguardar
     def pera(self,tempo):
         print('Aguarde por favor...')
         time.sleep(tempo)
     #Função que verifica se o valor e numerico ou nao
-    def eNumIsso(self,n):
+    def e_mun_isso(self,n):
         try:
             int(n)
             return True
@@ -25,7 +25,7 @@ class Exercicio:
             return False
     #Função que imprime uma linha tracejada na tela e caso tenha um texto
     #imprime a linha com o texto centralizado:
-    def daLinha(self,txt = '',tamanhoDoTrem = 0):
+    def da_linha(self,txt = '',tamanhoDoTrem = 0):
         texto = '' # Variavel que guarda o texto completo que sera impresso
         if tamanhoDoTrem == 0:
             tamanhoDoTrem = 70
@@ -48,55 +48,55 @@ class Exercicio:
     ######################### Inicio dos Exercicios ! ##########################
     # Exercicio 1:
     #Faça um Programa que mostre a mensagem "Alo mundo" na tela.
-    def olaMundo(self):
-        self.limpaEsseTrem()
-        self.daLinha('Exercicio 1:')
+    def ola_mundo(self):
+        self.limpa_esse_trem()
+        self.da_linha('Exercicio 1:')
         print('Faça um Programa que mostre a mensagem "Alo mundo" na tela.')
         print('Ola Mundo!!!!')
-        self.daLinha()
+        self.da_linha()
         self.pera(3)
     # Exercicio 2:
     #Faça um Programa que peça um número e então mostre a mensagem O número
     #informado foi [número].
-    def exibeNumero(self):
-        self.limpaEsseTrem()
-        self.daLinha('Exercicio 2:')
+    def exibe_numero(self):
+        self.limpa_esse_trem()
+        self.da_linha('Exercicio 2:')
         print('Faça um Programa que peça um número e então mostre a mensagem Numero informado foi X:')
-        self.daLinha()
+        self.da_linha()
         valor = input('Digite um Numero valido:')
-        if self.eNumIsso(valor):
+        if self.e_mun_isso(valor):
             print(f'O valor digitado {valor} e um valor NUMERICO')
         else:
             print(f"O valor digitado {valor} não é um numerico!!!!")
         self.pera(5)
-        self.daLinha()
+        self.da_linha()
     # Exercicio 3
     # Faça um Programa que peça doisou mais números e imprima a soma.
-    def somaNumeros(self):
+    def soma_numeros(self):
         repetir = True
         valores = []
         texto = ''
         while(repetir):
-            self.limpaEsseTrem()
-            self.daLinha('Exercicio 3:')
+            self.limpa_esse_trem()
+            self.da_linha('Exercicio 3:')
             print('Faça um Programa que  peça dois ou mais  números e imprima a soma.')
             print('Lembrando que caso seja  digitado letras somente sera  adicionado ')
             print('a listagem mas  o valor  não será somado! E caso não seja digitado')
             print('valor o programa efetuara a somatoria SOMENTE dos valores numericos')
             print('e voltara ao menu principal.')
-            self.daLinha()
+            self.da_linha()
             i = 0
             print('Numeros: ')
             print(valores)
-            self.daLinha()
+            self.da_linha()
 
             valor = input('Digite o valor que deseja adicionar a soma:')
-            if (self.eNumIsso(valor)):
+            if (self.e_mun_isso(valor)):
                 valores.append(valor)
             elif len(valor) == 0:
                 repetir = False
 
-                self.daLinha('Somatoria:')
+                self.da_linha('Somatoria:')
                 total = 0
                 for j in valores:
                     total = total + int(j)
@@ -110,21 +110,21 @@ class Exercicio:
 
     # Exercicio 4
     # Faça um Programa que peça as 4 notas bimestrais e mostre a média.
-    def calculaNota(self):
+    def calcula_nota(self):
         repetir = True
         notas = []
         media = 0
         while(repetir):
-            self.limpaEsseTrem()
-            self.daLinha('Exercicio 3')
+            self.limpa_esse_trem()
+            self.da_linha('Exercicio 3')
             print('Faça um programa que peça as 4 notas bimestrais e mostre a media.')
-            self.daLinha()
+            self.da_linha()
             print('Valores digitados:')
             print(notas)
 
             if len(notas) < 4:
                 valor = input('Digite um valor valido: ')
-                if self.eNumIsso(valor) == False:
+                if self.e_mun_isso(valor) == False:
                     notas.append(valor)
                 else:
                     print('O valor digitado não é um valor valido! Digite um valor valido.')
@@ -142,12 +142,12 @@ class Exercicio:
     def converter_medida(self):
         repetir = True
         while(repetir):
-            self.limpaEsseTrem()
-            self.daLinha()
-            self.daLinha('Exercicio 5')
-            self.daLinha()
+            self.limpa_esse_trem()
+            self.da_linha()
+            self.da_linha('Exercicio 5')
+            self.da_linha()
             print('Faça um Programa que converta metros para centímetros.')
-            self.daLinha()
+            self.da_linha()
 
             valor_m = input('Digite o valor em Metros para a converção:')
             try:
@@ -164,16 +164,16 @@ class Exercicio:
 exercicio = Exercicio() # Cria a classe para ser usada
 i = True
 while(i):
-    exercicio.limpaEsseTrem()
-    exercicio.daLinha()
+    exercicio.limpa_esse_trem()
+    exercicio.da_linha()
     print('Lista de exercicios já feitos:')
-    print('1 : OlaMundo')
+    print('1 : ola_mundo')
     print('2 : Exibe Numero')
     print('3 : Soma Numeros')
     print('4 : Calcula Media das notas')
     print('5 : Converte metros para centimetros')
     print('0 : Finaliza o Programa')
-    exercicio.daLinha()
+    exercicio.da_linha()
     ex = input('Escolha qual exercicio você quer executar:')
 
     if ex == '0':
@@ -183,12 +183,12 @@ while(i):
         i = False
     else:
         if ex == '1':
-            exercicio.olaMundo()
+            exercicio.ola_mundo()
         elif ex == '2':
-            exercicio.exibeNumero()
+            exercicio.exibe_numero()
         elif ex == '3':
-            exercicio.somaNumeros()
+            exercicio.soma_numeros()
         elif ex == '4':
-            exercicio.calculaNota()
+            exercicio.calcula_nota()
         elif ex == '5':
             exercicio.converter_medida()
