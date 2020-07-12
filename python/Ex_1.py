@@ -158,6 +158,12 @@ class Exercicio:
             except:
                 print('O valor digitado não é um valor valido para converção. Por favor digite um valor numerico valido!')
                 self.pera(2)
+
+    # Exercicio 6:
+    # Faça um Programa que peça o raio de um círculo, calcule e mostre sua área.
+    def circulo_area(self):
+
+
     ########################## Fim dos Exercicios! #############################
 
 #################### Começo da parte principal do programa ####################
