@@ -161,7 +161,7 @@ class Exercicio:
 
     # Exercicio 6:
     # Faça um Programa que peça o raio de um círculo, calcule e mostre sua área.
-    def circulo_area(self):
+    #def circulo_area(self):
 
 
     ########################## Fim dos Exercicios! #############################
