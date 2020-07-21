@@ -4,11 +4,13 @@ class Client:
     def __init__(self):
         print('Work with sockets Client!')
 '''
-c = socket.socket()
 
-c.connect(('localhost',9999))
+HOST = '127.0.0.1'
+PORT = 1234
 
-name = input('Enter Your name:')
-c.send(bytes(name,'utf-8'))
+with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+    s.connect((HOST, PORT))
+    s.sendall((b'Hello,word'))
+    data = s.recv(1024)
 
-print(c.recv(1024).decode())
+print('received', repr(data))
