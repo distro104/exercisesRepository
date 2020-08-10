@@ -5,8 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minha primeira pagina!</title>
     
-    <link rel="stylesheet" href="/styles/partials/page-study.css">
     <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/partials/header.css">
+    <link rel="stylesheet" href="/styles/partials/forms.css">
+    <link rel="stylesheet" href="/styles/partials/page-study.css">
+    
+
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&amp;family-Poppins:wght@400;600&amp;display=swap" rel="stylesheet">
 
 </head>
@@ -20,7 +24,102 @@
                 </a>
                 <img src="/images/logo.svg" alt="Proffy">
             </div>
+
+            <div class="header-content">
+                <strong>Este  são os proffys disponiveis</strong>
+                <form id="search-teachers">
+                    <div class="select-block">
+                        <label for="subject">Matéria</label>
+                        <select name="subject" id="subject">
+                            <option value="">Selecione uma opção</option>
+                            <option value="1" >Artes</option>
+                            <option value="2">Biologia</option>
+                            <option value="3">Ciências</option>
+                            <option value="4">Educção Fisica</option>
+                            <option value="5">Fisica</option>
+                            <option value="6">Geografia</option>
+                            <option value="7">História</option>
+                            <option value="8">Matemática</option>
+                            <option value="9">Português</option>
+                            <option value="10">Quimica</option>
+                        </select>
+                    </div>
+                    <div class="select-block">
+                        <label for="weekday">Dia da semana</label>
+                        <select name="weekday" id="weekday">
+                            <option value="">Seledione uma opção</option>
+                            <option value="0">Domingo</option>
+                            <option value="1">Segunda-feira</option>
+                            <option value="2">Terça-feira</option>
+                            <option value="3">Quarta-feira</option>
+                            <option value="4">Quinta-feira</option>
+                            <option value="5">Sexta-feira</option>
+                            <option value="6">Sabado</option>
+                        </select>
+                    </div>
+                    <div class="input-block">
+                        <label for="time">Hora</label>
+                        <input name="time" id="time" type="time" />
+                    </div>
+                    <button type="submit">Filtrar</button>
+                </form>
+            </div>
         </header>
+
+    
+        <main>
+            <article class="teacher-item">
+                <header>
+                    <img src="https://avatars3.githubusercontent.com/u/14029490?s=460&v=4" alt="">
+                    <div>
+                        <strong>Diego Fernandes</strong>
+                        <span>Quimica</span>
+                    </div>
+                </header>
+
+                <p>
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    <br><br>
+                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+
+                <footer>
+                    <p>
+                        Preço/hora <strong>R$ 20,00</strong>
+                    </p>
+                    <button type="button">
+                        <img src="/images/icons/whatsapp.svg" alt="whatsapp">
+                        Entrar em contato
+                    </button>
+                </footer>
+            </article>
+
+            <article class="teacher-item">
+                <header>
+                    <img src="https://avatars3.githubusercontent.com/u/14029490?s=460&v=4" alt="">
+                    <div>
+                        <strong>Diego Fernandes</strong>
+                        <span>Quimica</span>
+                    </div>
+                </header>
+
+                <p>
+                    Entusiasta das melhores tecnologias de quimica avançada
+                    <br><br>
+                    Apaixonado por explodir coisas em laboratorio.
+                </p>
+
+                <footer>
+                    <p>
+                        Preço/hora <strong>R$ 20,00</strong>
+                    </p>
+                    <button type="button">
+                        <img src="/images/icons/whatsapp.svg" alt="whatsapp">
+                        Entrar em contato
+                    </button>
+                </footer>
+            </article>
+        </main>
     </div>
 
 </body>
