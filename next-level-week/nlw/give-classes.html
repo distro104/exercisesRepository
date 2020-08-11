@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="/styles/partials/forms.css">
     <link rel="stylesheet" href="/styles/partials/page-give-classes.css">
     
-
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&amp;family-Poppins:wght@400;600&amp;display=swap" rel="stylesheet">
 
 </head>
@@ -42,15 +41,15 @@
 
                     <div class="input-block">
                         <label for="name">Nome Completo</label>
-                        <input name="name" id="name" required>
+                        <input name="name" id="name" required />
                     </div>
                     <div class="input-block">
                         <label for="avatar">Link da foto <small>(Comece com https://)</small></label>
-                        <input name="avatar" id="avatar" type="url" required>
+                        <input name="avatar" id="avatar" type="url" required />
                     </div>
                     <div class="input-block">
                         <label for="whastapp">Whatsapp <small>(somente números)</small></label>
-                        <input name="whastapp" id="whastapp" type="number" required>
+                        <input name="whastapp" id="whastapp" type="number" required />
                     </div>
                     <div class="textarea-block">
                         <label for="bio">Biografia</label>
@@ -86,13 +85,13 @@
                     </div>
                 </fieldset>
 
-                <fieldset>
+                <fieldset id="schedule-items">
                     <legend>
                         Horarios Disponiveis
                         <button id="add-time" type="button">+Novo Horario</button>
                     </legend>
                     
-                    <div class="schedule-item" id="schedule-item">
+                    <div class="schedule-item">
                         <div class="select-block">
                             <label for="weekday">Dia da semana</label>
                             <select name="weekday[]" required>
