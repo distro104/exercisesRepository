@@ -1,5 +1,7 @@
 import pygame
 from pygame.locals import *
+from board import Board
+
 
 SCREEN_WIDTH = 500
 SCREEN_HEIGHT = 500
