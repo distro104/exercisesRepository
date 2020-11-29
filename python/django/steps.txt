@@ -1,0 +1,76 @@
+# This is an personal guide about how to create and configurean aplication 
+# Reference:  https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html?highlight=environment
+# using Django step by step
+##########################################################################
+###Install Django:
+conda install django
+# or
+pip install django
+
+
+##########################################################################
+### create the project folder
+mkdir exercise_1
+---------------------------------------------
+###Create an evironment
+# Obs: case need to define a expecific version you can use:
+# conda create -n myenv django python=3.6
+conda create --name exercise_1_env django
+
+##########################################################################
+# After create the environment you ll need to use the follow code for
+# activate the environment once everytime u start to use then.
+conda activate exercise_1_env
+
+#desactivate the environment
+conda deactivate
+--------------------------------------------
+
+###inside folder
+#Create the project Django:
+django-admin startproject exercise_1
+
+#Run the server
+python manage.py  runserver
+
+##########################################################################
+### Creating an App-PythonAplication and add to the project.
+python manage.py startapp exercise_1_app
+
+#After create the app you need to add the app in your project for it
+# you need to access the file (settings.py) and add the name app in in
+# INTALLED_APPS
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'exercise_1_app',               <<<<<<<<<<< NEW CONTENT!!
+]
+
+
+### Creating a View for this App
+# After add the app in to the project inside of the folder app you need to
+# acees the folder app and add the code in [views.py] 
+from django.http import HttpResponse
+def index(request):
+    return HttpResponse("Hello Canada!!!!")
+ #Obs: this content is only to test and can change in others projects!
+ 
+##########################################################################
+### Add the app in the url.py
+# After you  create the content in your app you need to add its in the 
+#file [url.py] in the main folder:
+
+from django.conf.urls import url   <<<<<<<<<<<<<<<<<<<< NEW CONTENT!
+from django.contrib import admin
+from exercise_1_app import views
+
+urlpatterns = [
+    url(r'^$', views.index, name='index'),  <<<<<<<<<<< NEW CONTENT!
+    url(r'admin/', admin.site.urls),
+]
+ 
+ 
