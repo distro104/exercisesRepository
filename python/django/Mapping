@@ -1,0 +1,27 @@
+# Create a template
+##########################################################################
+##################### Creating  and configuring a template site in Django:
+### 1 -> First go to the archive [urls.py] in the main aplication
+###      [exercise_1] add edit the archive add the new lines:
+
+from django.conf.urls import url
+from django.contrib import admin
+from django.conf.urls import include <<< NEW LINE!!
+from exercise_1_app import views
+
+urlpatterns = [
+    url(r'^exercise_1_app/', include('exercise_1_app.urls')), <<< NEW LINE!
+    url(r'^$', views.index, name='index'),
+    url(r'admin/', admin.site.urls),
+]
+
+### 2 -> go to the app fooder [exercise_1_app] and create the archive[urls.py]
+# with the content:
+
+from django.conf.urls import url
+from exercise_1_app import views
+
+urlpatterns = {
+    url(r'^$', views.index, name='index'),
+}
+

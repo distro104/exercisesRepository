@@ -26,7 +26,7 @@ conda activate exercise_1_env
 conda deactivate
 --------------------------------------------
 
-###inside folder
+###Inside folder
 #Create the project Django:
 django-admin startproject exercise_1
 
@@ -74,3 +74,29 @@ urlpatterns = [
 ]
  
  
+##########################################################################
+### Configuring Maps Urls:
+# 1 -> First you need to go to [project_name/urls.py] and edit
+# the file:
+from django.conf.urls import url
+from django.contrib import admin
+from django.conf.urls import include <<< NEW!
+from exercise_1_app import views
+
+urlpatterns = [
+    url(r'^exercise_1_app/', include('exercise_1_app.urls')),<<<NEW!
+    url(r'^$', views.index, name='index'),
+    url(r'admin/', admin.site.urls),
+]
+
+###
+# 2 -> inside of the [appfolder] you need to create the archive
+# [urls.py] and add:
+from django.conf.urls import url
+from exercise_1_app import views
+
+urlpatterns = {
+    url(r'^$', views.index, name='index'),
+}
+
+

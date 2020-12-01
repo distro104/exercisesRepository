@@ -1,0 +1,40 @@
+1 -> Create directory templates/app
+2 -> get the DIR Key path
+
+##########################################################################
+### Add Templates in the project:
+# 1 ->  you need to create a new folder [templates] in the main project
+# [exercise_1] and inside of this folder you ll create a new file
+# [index.html] and in the main part add the content:
+        <h1>
+            Here is a test for to add content using tha variable create in python:
+            <br />
+        </h1>
+        {{ insert me }}  <<< Important part!!!
+
+##########
+# 2 -> access the archive [settings.py] in the main project [exercise_1]
+# add this lines:
+import os 	                                                <<<<< NEW LINE!!
+TEMPLATES_DIR = (os.path.join(BASE_DIR, "templates"))          <<<<< NEW LINE!!
+###
+
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [TEMPLATES_DIR,],                              <<<<< ADD CONTENT HERE!!
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]
+
+##########
+# 3 -> Edit the archive [views.py] in the app and add the content:
+
